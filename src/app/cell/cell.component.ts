@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-cell',
@@ -6,6 +6,7 @@ import {Component} from '@angular/core';
   styleUrls: ['./cell.component.css']
 })
 export class CellComponent {
+  @Input() text = '';
   clicked = false;
 
   changeClassName() {

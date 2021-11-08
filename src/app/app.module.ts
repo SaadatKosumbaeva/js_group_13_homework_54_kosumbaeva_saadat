@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { CellComponent } from './cell/cell.component';
+import { PlayingFieldComponent } from './playing-field/playing-field.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CellComponent
+    CellComponent,
+    PlayingFieldComponent
   ],
   imports: [
     BrowserModule
