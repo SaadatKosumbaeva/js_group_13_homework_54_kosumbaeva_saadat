@@ -2,5 +2,7 @@
   width: 300px;
   height: 300px;
   font-size: 0;
+  border: 1px solid #000;
+  padding: 15px;
 }
 

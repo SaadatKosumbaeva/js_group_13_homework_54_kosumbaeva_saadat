@@ -1,6 +1,8 @@
 <div class="container">
-  <app-cell *ngFor="let cell of cells; let i = index"
+  <app-cell *ngFor="let cell of cells.cells; let i = index"
             [text]="cell.text"
+            (click)="countTries(i)"
             (cellClick)="pushText(i)"
   ></app-cell>
 </div>
+<app-control-block [tries]="tries" (gameReset)="resetGame()"></app-control-block>
