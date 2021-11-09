@@ -9,7 +9,6 @@ import {GameField} from "../../lib/GameField";
 
 export class PlayingFieldComponent {
   cells: GameField;
-  randomIndex = Math.floor(Math.random() * 36);
   tries = 0;
   found = false;
 
@@ -17,23 +16,24 @@ export class PlayingFieldComponent {
     this.cells = new GameField;
   }
 
-  pushText(index: number) {
-    if (index === this.randomIndex) {
-      this.cells.cells[this.randomIndex].hasItem = true;
-      this.cells.cells[this.randomIndex].text = 'o';
-    }
-  }
-
-  countTries(index: number) {
-    if (index === this.randomIndex) {
+  pushText(index: number, clicked: boolean) {
+    if (index === this.cells.randomIndex) {
+      this.cells.cells[this.cells.randomIndex].hasItem = true;
+      this.cells.cells[this.cells.randomIndex].text = 'o';
       this.found = true;
     }
-    this.tries ++;
-    this.found = false;
+
+    if (!clicked) {
+      return;
+    } else {
+      this.tries++;
+    }
   }
 
   resetGame() {
     this.cells = new GameField();
-    console.log('reset');
+    console.log(this.cells);
+    this.tries = 0;
+    this.found = false;
   }
 }

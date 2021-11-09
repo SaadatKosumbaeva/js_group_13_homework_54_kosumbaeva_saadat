@@ -15,7 +15,11 @@ export class CellComponent {
   }
 
   onCellClick() {
-    this.clicked = !this.clicked;
-    this.cellClick.emit();
+    if (this.clicked) {
+      return;
+    } else {
+      this.clicked = true;
+      this.cellClick.emit(this.clicked);
+    }
   }
 }
