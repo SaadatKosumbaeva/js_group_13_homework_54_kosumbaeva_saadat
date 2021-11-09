@@ -1,3 +1,6 @@
 <div class="cell-wrap">
-  <div (click)="clicked = !clicked" [ngClass]="changeClassName()"><p>{{text}}</p></div>
+  <div (click)="onCellClick()"
+       [ngClass]="changeClassName()">
+    <p>{{text}}</p>
+  </div>
 </div>
