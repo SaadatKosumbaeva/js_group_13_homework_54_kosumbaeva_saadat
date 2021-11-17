@@ -7,11 +7,16 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 })
 export class CellComponent {
   @Input() text = '';
+  @Input() itemFound = false;
   @Output() cellClick = new EventEmitter();
   clicked = false;
 
   changeClassName() {
-    return this.clicked ? 'cell white' : 'cell black';
+    if (this.itemFound) {
+      return 'cell grey';
+    } else {
+      return this.clicked ? 'cell white' : 'cell black';
+    }
   }
 
   onCellClick() {

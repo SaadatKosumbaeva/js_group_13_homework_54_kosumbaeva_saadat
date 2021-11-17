@@ -25,14 +25,13 @@ export class PlayingFieldComponent {
 
     if (!clicked) {
       return;
-    } else {
+    } else if (clicked && !this.found){
       this.tries++;
     }
   }
 
   resetGame() {
     this.cells = new GameField();
-    console.log(this.cells);
     this.tries = 0;
     this.found = false;
   }

@@ -23,6 +23,10 @@
   background: #000;
 }
 
+.grey {
+  background: #ccc;
+}
+
 p {
   padding: 6px 0;
   margin: 0;
